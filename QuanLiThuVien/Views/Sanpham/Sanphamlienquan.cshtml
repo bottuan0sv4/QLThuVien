@@ -1,0 +1,29 @@
+﻿@model IEnumerable<QuanLiThuVien.Models.Entities.Sach>
+
+<div class="random-area mb-30">
+    <div class="product-active-2 owl-carousel">
+        <div class="product-total-2">
+            @foreach (var item in Model)
+            {
+                <div class="single-most-product bd mb-18">
+                    <div class="most-product-img">
+                        <a href="/Sanpham/Chitietsanpham/@item.SachID"><img src="~/Content/img/product/@item.ImgLink" alt="book" /></a>
+                    </div>
+                    <div class="most-product-content">
+                        <div class="product-rating">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                            </ul>
+                        </div>
+                        <h4><a href="/Sanpham/Chitietsanpham/@item.SachID">@item.Tensach</a></h4>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

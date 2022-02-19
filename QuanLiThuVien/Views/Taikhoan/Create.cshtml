@@ -1,0 +1,99 @@
+﻿
+@model QuanLiThuVien.Models.ViewModel.TaikhoanModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="breadcrumbs-area mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumbs-menu">
+                    <ul>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#" class="active">Đăng kí</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="user-login-area mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="login-title text-center mb-30">
+                    <h2>ĐĂNG KÍ</h2>
+                </div>
+            </div>
+            <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                @using (Html.BeginForm("Create", "Taikhoan", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="single-register">
+                        @if (ViewBag.Success != null)
+                        {
+                            <div class="alert alert-success">@ViewBag.Success </div>
+                        }
+                    </div>
+                    <div class="login-form">
+
+                        <div class="single-login">
+                            @Html.LabelFor(model => model.tentk)
+                            @Html.ValidationMessageFor(model => model.tentk, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.tentk)
+
+                        </div>
+                        <div class="single-login">
+                            @Html.LabelFor(model => model.username)
+                            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.username)
+
+                        </div>
+                        <div class="single-login">
+                            @Html.LabelFor(model => model.password)
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                            @Html.PasswordFor(model => model.password)
+                        </div>
+                        <div class="single-login">
+                            @Html.LabelFor(model => model.ConfirmPass)
+                            @Html.ValidationMessageFor(model => model.ConfirmPass, "", new { @class = "text-danger" })
+                            @Html.PasswordFor(model => model.ConfirmPass)
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="single-login">
+                                    @Html.LabelFor(model => model.mail)
+                                    @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.mail)
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="single-login">
+                                    @Html.LabelFor(model => model.phone)
+                                    @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(model => model.phone)
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-login">
+                            @Html.LabelFor(model => model.diachi)
+                            @Html.ValidationMessageFor(model => model.diachi, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.diachi)
+                        </div>
+
+                        <div class="singel-register">
+                            <button type="submit">Đăng kí</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

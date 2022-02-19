@@ -1,0 +1,43 @@
+﻿
+@using QuanLiThuVien.Models.Entities;
+@using QuanLiThuVien.Models.ViewModel;
+<div class="header-top-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="language-area">
+                    <ul>
+                        <li>
+                            <a href="#">Việt Nam</a>
+                        </li>
+                        <li>
+                            <a href="#">VNĐ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="account-area text-right">
+                    @{
+                        var session = (TaikhoanLoginModel)Session[QuanLiThuVien.Models.Common.CommonConstant.USER_SESSION];
+                    }
+                    @if (session == null)
+                    {
+                        <ul>
+                            <li><a href="/Taikhoan/Create">Đăng kí</a></li>
+                            <li><a href="/Taikhoan/Login">Đăng nhập</a></li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul>
+                            <li><a href="/Taikhoan/Create">@session.username</a></li>
+                            <li><a href="#">@Html.ActionLink("Thoát", "Logout", "TAIKHOAN")</a></li>
+                        </ul>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

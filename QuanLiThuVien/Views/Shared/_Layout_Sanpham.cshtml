@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Thư viện mượn sách</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/img/logo/logoSach.png">
+
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="~/Content/css/animate.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="~/Content/css/meanmenu.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <!-- flexslider.css-->
+    <link rel="stylesheet" href="~/Content/css/flexslider.css">
+    <!-- chosen.min.css-->
+    <link rel="stylesheet" href="~/Content/css/chosen.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/Content/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- header-top-area-start -->
+        @Html.Partial("HeaderTop");
+        @{Html.RenderAction("HeaderMid"); }
+        <div>
+            @{ Html.RenderAction("Menu", "Home"); }
+        </div>
+
+    </header>
+    <div>
+        @RenderSection("title", required: false);
+    </div>
+    <div>
+        @RenderBody();
+    </div>
+    <footer>
+        @Html.Partial("Footer");
+    </footer>
+    <!-- Modal -->
+    <!-- Modal end -->
+    <!-- all js here -->
+    <!-- jquery latest version -->
+    <script src="~/Content/js/vendor/jquery-1.12.0.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <!-- owl.carousel js -->
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <!-- meanmenu js -->
+    <script src="~/Content/js/jquery.meanmenu.js"></script>
+    <!-- wow js -->
+    <script src="~/Content/js/wow.min.js"></script>
+    <!-- jquery.parallax-1.1.3.js -->
+    <script src="~/Content/js/jquery.parallax-1.1.3.js"></script>
+    <!-- jquery.countdown.min.js -->
+    <script src="~/Content/js/jquery.countdown.min.js"></script>
+    <!-- jquery.flexslider.js -->
+    <script src="js/jquery.flexslider.js"></script>
+    <!-- chosen.jquery.min.js -->
+    <script src="~/Content/js/chosen.jquery.min.js"></script>
+    <!-- jquery.counterup.min.js -->
+    <script src="~/Content/js/jquery.counterup.min.js"></script>
+    <!-- waypoints.min.js -->
+    <script src="~/Content/js/waypoints.min.js"></script>
+    <!-- plugins js -->
+    <script src="~/Content/js/plugins.js"></script>
+    <!-- main js -->
+    <script src="~/Content/js/main.js"></script>
+    @RenderSection("jsFooter", required: false)
+
+</body>
+</html>

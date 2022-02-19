@@ -1,0 +1,61 @@
+﻿
+@model QuanLiThuVien.Models.ViewModel.TaikhoanLoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="breadcrumbs-area mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#" class="active">Đăng nhập</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="user-login-area mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="login-title text-center mb-30">
+                    <h2>ĐĂNG NHẬP</h2>
+                </div>
+            </div>
+            <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+                @using (Html.BeginForm("Login","Taikhoan",FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="login-form">
+                    <div class="single-login">
+                        @Html.LabelFor(model => model.username)
+                        @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.username)
+                    </div>
+                    <div class="single-login">
+                        @Html.LabelFor(model => model.password)
+                        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                        @Html.PasswordFor(model => model.password)
+                    </div>
+                    <div class="single-login single-login-2">
+                        <input type="submit" value="Đăng nhập" class="btn btn-default" />
+                    </div>
+                    <div class="single-login single-login-2">
+                        <input type="" value="Quên mật khẩu" class="btn btn-default" />
+
+                    </div>
+                </div>
+                    
+                }
+
+                
+            </div>
+        </div>
+    </div>
+</div>

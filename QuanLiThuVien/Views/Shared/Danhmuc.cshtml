@@ -1,0 +1,53 @@
+﻿
+@{
+    var theLoais = (List<QuanLiThuVien.Models.Entities.TheLoai>)ViewBag.ListTheLoai;
+    var nhaXBs = (List<QuanLiThuVien.Models.Entities.NhaXuatBan>)ViewBag.ListNXB;
+    var tacGias = (List<QuanLiThuVien.Models.Entities.TacGia>)ViewBag.ListTacGia;
+}
+
+<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+    <div class="shop-left">
+        <div class="section-title-5 mb-30">
+            <h2>Danh mục</h2>
+        </div>
+        <div class="left-title mb-20">
+            <h4>Thể loại</h4>
+        </div>
+        <div class="left-menu mb-30">
+            <ul>
+                @{
+                    for (int temp = 0; temp < 5; temp++)
+                    {
+                        <li><a href="/Sanpham/TimkiemtheoTheloai/@theLoais[temp].TheloaiID">@theLoais[temp].Tentheloai</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="left-title mb-20">
+            <h4>Tác giả</h4>
+        </div>
+        <div class="left-menu mb-30">
+            <ul>
+                @{
+                    for (int temp = 0; temp < 5; temp++)
+                    {
+                        <li><a href="/Sanpham/TimkiemtheoTacgia/@tacGias[temp].TacgiaID">@tacGias[temp].Tentacgia</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="left-title mb-20">
+            <h4>Nhà xuất bản</h4>
+        </div>
+        <div class="left-menu mb-30">
+            <ul>
+                @{
+                    for (int temp = 0; temp < 5; temp++)
+                    {
+                        <li><a href="/Sanpham/TimkiemtheoNXB/@nhaXBs[temp].NhaxuatbanID">@nhaXBs[temp].TenNXB</a></li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>

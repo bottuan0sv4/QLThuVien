@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "ShowInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+{
+    <button type="submit" class="btn">Thanh toán </button>
+}

@@ -1,0 +1,42 @@
+﻿@model List<QuanLiThuVien.Models.ViewModel.CartItemModel>
+@using QuanLiThuVien.Models.Entities;
+@using QuanLiThuVien.Models;
+<div class="my-cart">
+    <ul>
+        <li>
+            <a href="#"><i class="fa fa-shopping-cart"></i>Giỏ hàng</a>
+            @if (Model == null)
+            {
+                <span>0</span>
+            }
+            else
+            {
+                <span>@Model.Count</span>
+                <div class="mini-cart-sub">
+                    <div class="cart-product">
+                        @foreach (var item in Model)
+                        {
+                            <div class="single-cart">
+                                <div class="cart-img">
+                                    <a href="#"><img src="~/Content/img/product/@item.sach.ImgLink" alt="book" /></a>
+                                </div>
+                                <div class="cart-info">
+                                    <h5><a href="#">@item.sach.Tensach</a></h5>
+                                    <p>Số lương: @item.Quantity</p>
+                                </div>
+                                <div class="cart-icon">
+                                    <a href="#"></a>
+                                    <a href="@Url.Action("XoaKhoiGio",new { sachID = item.sach.SachID})" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');"><i class="fa fa-remove"></i></a>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                    <div class="cart-bottom">
+                        <a class="view-cart" href="/Cart/Index">Xem giỏ hàng chi tiết</a>
+                    </div>
+                </div>
+            }
+        </li>
+    </ul>
+</div>

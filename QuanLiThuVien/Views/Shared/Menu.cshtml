@@ -1,0 +1,107 @@
+﻿
+@{ 
+    var theLoais = (List<QuanLiThuVien.Models.Entities.TheLoai>)ViewBag.ListTheLoai;
+    var nhaXBs = (List<QuanLiThuVien.Models.Entities.NhaXuatBan>)ViewBag.ListNXB;
+    var tacGias = (List<QuanLiThuVien.Models.Entities.TacGia>)ViewBag.ListTacGia;
+}
+
+<div class="main-menu-area hidden-sm hidden-xs sticky-header-1" id="header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="menu-area">
+                    <nav>
+                        <ul>
+                            <li class="active"><a href="/Home/Index">Trang chủ</a></li>
+                            <li>
+                                <a href="/Sanpham/SPView">Sách</a>
+                            </li>
+                            <li>
+                                <a href="">Phân loại<i class="fa fa-angle-down"></i></a>
+                                <div class="mega-menu mega-menu-2">
+                                    <span>
+                                        <a href="#" class="title">Thể loại</a>
+                                        @foreach (var item in theLoais)
+                                        {
+                                            <a href="/Sanpham/TimkiemtheoTheloai/@item.TheloaiID">@item.Tentheloai</a>
+                                        }
+                                        <a href="#">...</a>
+                                    </span>
+                                    <span>
+                                        <a href="#" class="title">Tác giả</a>
+                                        @foreach (var item in tacGias)
+                                        {
+                                            <a href="/Sanpham/TimkiemtheoTacgia/@item.TacgiaID">@item.Tentacgia</a>
+                                        }
+                                        <a href="shop.html">...</a>
+                                    </span>
+                                    <span>
+                                        <a href="#" class="title">Nhà xuất bản</a>
+                                        @foreach (var item in nhaXBs)
+                                        {
+                                            <a href="/Sanpham/TimkiemtheoNXB/@item.NhaxuatbanID">@item.TenNXB</a>
+                                        }
+                                        <a href="shop.html">...</a>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Giới thiệu</a>
+                            </li>
+                            <li>
+                                <a href="#">Quà tặng</a>
+                            </li>
+                            <li>
+                                <a href="#">Liên hệ</a>
+                            </li>
+                            <li>
+                                <a href="#">Fanpage</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- main-menu-area-end -->
+<div class="mobile-menu-area hidden-md hidden-lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="mobile-menu">
+                    <nav id="mobile-menu-active">
+                        <ul id="nav">
+                            <li>
+                                <a href="index.html">Trang chủ</a>
+                            </li>
+                            <li>
+                                <a href="product-details.html">Giới thiệu</a>
+                            </li>
+                            <li>
+                                <a href="product-details.html">Sách</a>
+                                <ul>
+                                    <li><a href="#" class="title">Thể loại</a></li>
+                                    <li><a href="#">Tác giả</a></li>
+                                    <li><a href="#">Nhà xuất bản</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="product-details.html">Quà tặng</a>
+
+                            </li>
+                            <li>
+                                <a href="#">Liên hệ</a>
+                            </li>
+                            <li>
+                                <a href="product-details.html">Fanpage</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
